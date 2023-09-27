@@ -18,3 +18,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 route::get('prevision-todos',[PrevisionController::class, 'index']);
+route::post('prevision-salvar',[PrevisionController::class,'store']);
+route::get('prevision-show/{id}',[PrevisionController::class,'show']);

@@ -20,7 +20,7 @@ class PrevisionController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -28,7 +28,10 @@ class PrevisionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Prevision::create([
+        'descricao'=> $request -> input('descricao'),
+        'data_previsao'=> $request -> input('data_previsao'),
+        'cidade'=> $request -> input('cidade')]);
     }
 
     /**
@@ -36,7 +39,7 @@ class PrevisionController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return  Prevision::find($id);
     }
 
     /**
