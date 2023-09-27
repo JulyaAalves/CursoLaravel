@@ -20,3 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 route::get('prevision-todos',[PrevisionController::class, 'index']);
 route::post('prevision-salvar',[PrevisionController::class,'store']);
 route::get('prevision-show/{id}',[PrevisionController::class,'show']);
+route::put('prevision-update/{id}',[PrevisionController::class,'update']);
+route::delete('prevision-destroy/{id}',[PrevisionController::class,'destroy']);
+
+
+route::resource('prevision',PrevisionController::class,);

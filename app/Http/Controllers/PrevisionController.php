@@ -47,7 +47,7 @@ class PrevisionController extends Controller
      */
     public function edit(string $id)
     {
-        //
+       
     }
 
     /**
@@ -55,7 +55,11 @@ class PrevisionController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $previsao=Prevision::find($id);
+        $previsao->descricao=$request->input('descricao');
+        $previsao->data_previsao=$request->input('data_previsao');
+        $previsao->cidade=$request->input('cidade');
+        $previsao->update();
     }
 
     /**
@@ -63,6 +67,7 @@ class PrevisionController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $previsao=Prevision::find($id);
+        $previsao->destroy;
     }
 }
